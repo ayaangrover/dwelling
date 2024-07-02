@@ -30,7 +30,7 @@ class NewsViewModel: ObservableObject {
             do {
                 let result = try JSONDecoder().decode(NewsResponse.self, from: data)
                 DispatchQueue.main.async {
-                    self.articles = Array(result.results.prefix(50))
+                    self.articles = Array(result.results.prefix(10))
                     for article in self.articles {
                         if let multimedia = article.multimedia {
                             for media in multimedia {
