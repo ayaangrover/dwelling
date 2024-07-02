@@ -10,6 +10,11 @@ struct ContentView: View {
                     if let multimedia = article.multimedia?.first(where: { $0.format == "superJumbo" }) {
                         AsyncImage(url: URL(string: multimedia.url))
                             .aspectRatio(contentMode: .fit)
+                    } else {
+                        Text("No Image Available")
+                            .foregroundColor(.gray)
+                            .frame(maxWidth: .infinity, minHeight: 200)
+                            .background(Color.gray.opacity(0.1))
                     }
                     Text(article.title)
                         .font(.headline)

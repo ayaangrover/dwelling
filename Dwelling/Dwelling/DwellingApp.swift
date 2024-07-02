@@ -8,19 +8,3 @@ struct AyaanApp: App {
         }
     }
 }
-
-struct ContentTabView: View {
-    var body: some View {
-        TabView {
-            NewsView()
-                .tabItem {
-                    Label("News", systemImage: "newspaper")
-                }
-            
-            LocationView()
-                .tabItem {
-                    Label("Location", systemImage: "map")
-                }
-        }
-    }
-}

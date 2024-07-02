@@ -15,7 +15,6 @@
 		3A9A5A2A2C342B3200260BE4 /* AsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9A5A292C342B3200260BE4 /* AsyncImage.swift */; };
 		3A9A5A2C2C342B4F00260BE4 /* NewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9A5A2B2C342B4F00260BE4 /* NewsViewModel.swift */; };
 		3A9A5A2E2C342B6600260BE4 /* NewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9A5A2D2C342B6600260BE4 /* NewsView.swift */; };
-		3A9A5A302C342B7A00260BE4 /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9A5A2F2C342B7A00260BE4 /* LocationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,7 +27,6 @@
 		3A9A5A292C342B3200260BE4 /* AsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImage.swift; sourceTree = "<group>"; };
 		3A9A5A2B2C342B4F00260BE4 /* NewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewModel.swift; sourceTree = "<group>"; };
 		3A9A5A2D2C342B6600260BE4 /* NewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsView.swift; sourceTree = "<group>"; };
-		3A9A5A2F2C342B7A00260BE4 /* LocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,7 +65,6 @@
 				3A9A5A292C342B3200260BE4 /* AsyncImage.swift */,
 				3A9A5A2B2C342B4F00260BE4 /* NewsViewModel.swift */,
 				3A9A5A2D2C342B6600260BE4 /* NewsView.swift */,
-				3A9A5A2F2C342B7A00260BE4 /* LocationView.swift */,
 				3A9A5A1D2C342AC000260BE4 /* Assets.xcassets */,
 				3A9A5A1F2C342AC000260BE4 /* Preview Content */,
 			);
@@ -156,7 +153,6 @@
 				3A9A5A1C2C342ABD00260BE4 /* ContentView.swift in Sources */,
 				3A9A5A2C2C342B4F00260BE4 /* NewsViewModel.swift in Sources */,
 				3A9A5A2E2C342B6600260BE4 /* NewsView.swift in Sources */,
-				3A9A5A302C342B7A00260BE4 /* LocationView.swift in Sources */,
 				3A9A5A1A2C342ABD00260BE4 /* DwellingApp.swift in Sources */,
 				3A9A5A282C342B1E00260BE4 /* Article.swift in Sources */,
 			);
