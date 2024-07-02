@@ -42,19 +42,31 @@ class ImageLoader: ObservableObject {
             return
         }
 
+        print("Loading image from URL: \(url)")
+
         URLSession.shared.dataTask(with: url) { data, response, error in
             if let error = error {
                 print("Failed to load image:", error)
                 return
             }
 
-            guard let data = data, let image = UIImage(data: data) else {
+            guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
+                print("Invalid response or status code")
+                return
+            }
+
+            guard let data = data else {
                 print("No image data")
                 return
             }
 
-            DispatchQueue.main.async {
-                self.image = image
+            if let image = UIImage(data: data) {
+                DispatchQueue.main.async {
+                    self.image = image
+                }
+                print("Image loaded successfully")
+            } else {
+                print("Failed to create image from data")
             }
         }.resume()
     }

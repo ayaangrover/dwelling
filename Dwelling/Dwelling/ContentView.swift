@@ -7,7 +7,7 @@ struct ContentView: View {
         NavigationView {
             List(viewModel.articles) { article in
                 VStack(alignment: .leading) {
-                    if let multimedia = article.multimedia?.first(where: { $0.format == "superJumbo" }) {
+                    if let multimedia = article.multimedia?.first {
                         AsyncImage(url: URL(string: multimedia.url))
                             .aspectRatio(contentMode: .fit)
                     } else {
