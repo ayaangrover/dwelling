@@ -4,7 +4,7 @@ import SwiftUI
 struct AyaanApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView() // Set MainTabView as the initial view
         }
     }
 }

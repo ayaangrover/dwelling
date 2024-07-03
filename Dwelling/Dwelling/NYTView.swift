@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct ContentView: View {
+struct NYTView: View {
     @StateObject var viewModel = NewsViewModel(apiKey: "DYGdeGsK3PoebT5s9vGguTWMwZQxXGS4", urlString: "https://api.nytimes.com/svc/topstories/v2/home.json?api-key=")
     
     var body: some View {
@@ -16,15 +16,18 @@ struct ContentView: View {
                             .frame(maxWidth: .infinity, minHeight: 200)
                             .background(Color.gray.opacity(0.1))
                     }
-                    Text(article.title)
-                        .font(.headline)
+                    Link(destination: URL(string: article.url)!) {
+                        Text(article.title)
+                            .font(.headline)
+                            .foregroundColor(.blue) // Optional: Change the color to indicate it's a link
+                    }
                     Text(article.abstract)
                         .font(.subheadline)
                         .foregroundColor(.secondary)
                 }
                 .padding()
             }
-            .navigationTitle("Top Headlines")
+            .navigationTitle("Top Headlines - NYT")
         }
         .onAppear {
             viewModel.fetchNews()
@@ -32,8 +35,8 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct NYTView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        NYTView()
     }
 }

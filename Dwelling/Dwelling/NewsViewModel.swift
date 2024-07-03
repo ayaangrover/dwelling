@@ -3,10 +3,12 @@ import Foundation
 class NewsViewModel: ObservableObject {
     @Published var articles = [Article]()
     
-    private let apiKey = "DYGdeGsK3PoebT5s9vGguTWMwZQxXGS4"  // Replace with your actual API key
-    private let urlString = "https://api.nytimes.com/svc/topstories/v2/home.json?api-key="
+    private let apiKey: String
+    private let urlString: String
     
-    init() {
+    init(apiKey: String, urlString: String) {
+        self.apiKey = apiKey
+        self.urlString = urlString
         fetchNews()
     }
     
@@ -16,7 +18,7 @@ class NewsViewModel: ObservableObject {
             return
         }
         
-        URLSession.shared.dataTask(with: url) { (data, response, error) in
+        URLSession.shared.dataTask(with: url) { data, response, error in
             if let error = error {
                 print("Failed to fetch data:", error)
                 return
@@ -30,15 +32,7 @@ class NewsViewModel: ObservableObject {
             do {
                 let result = try JSONDecoder().decode(NewsResponse.self, from: data)
                 DispatchQueue.main.async {
-                    self.articles = Array(result.results.prefix(10))
-                    for article in self.articles {
-                        if let multimedia = article.multimedia {
-                            for media in multimedia {
-                                print("Media URL: \(media.url), Format: \(media.format)")
-                            }
-                        }
-                    }
-                    print("Articles fetched: \(self.articles.count)")
+                    self.articles = Array(result.results.prefix(3))
                 }
             } catch {
                 print("Failed to decode JSON: \(error)")
