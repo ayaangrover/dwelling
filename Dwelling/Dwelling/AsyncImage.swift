@@ -14,6 +14,9 @@ struct AsyncImage: View {
             .onAppear {
                 loader.load()
             }
+            .clipShape(RoundedRectangle(cornerRadius: 10)) // Rounded corners
+//            .shadow(radius: 5) // Shadow
+            .padding(.vertical, 10) // Padding to add some space around the image
     }
 
     private var image: some View {
@@ -21,8 +24,11 @@ struct AsyncImage: View {
             if let image = loader.image {
                 Image(uiImage: image)
                     .resizable()
+                    .aspectRatio(contentMode: .fill)
             } else {
                 placeholder
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
             }
         }
     }
