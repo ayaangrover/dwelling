@@ -21,9 +21,11 @@ struct SportsNewsView: View {
                             .font(.headline)
                             .foregroundColor(.blue) // Optional: Change the color to indicate it's a link
                     }
-                    Text(article.description)
-                        .font(.subheadline)
-                        .foregroundColor(.secondary)
+                    if let description = article.description {
+                        Text(description)
+                            .font(.subheadline)
+                            .foregroundColor(.secondary)
+                    }
                 }
                 .padding()
             }

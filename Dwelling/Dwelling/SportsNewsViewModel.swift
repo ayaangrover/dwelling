@@ -4,7 +4,7 @@ class SportsNewsViewModel: ObservableObject {
     @Published var articles = [SportsArticle]()
     
     private let apiKey = "b2f8516bddfc4d18bd602d4a080ec227"
-    private let urlString = "https://newsapi.org/v2/top-headlines?category=sports&apiKey="
+    private let urlString = "https://newsapi.org/v2/top-headlines?category=sports&language=en&apiKey="
     
     init() {
         fetchNews()
@@ -51,7 +51,7 @@ struct SportsNewsResponse: Codable {
 struct SportsArticle: Identifiable, Codable {
     let id = UUID()
     let title: String
-    let description: String
+    let description: String?
     let url: String
     let urlToImage: String?
 }
