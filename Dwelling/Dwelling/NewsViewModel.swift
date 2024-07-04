@@ -32,7 +32,7 @@ class NewsViewModel: ObservableObject {
             do {
                 let result = try JSONDecoder().decode(NewsResponse.self, from: data)
                 DispatchQueue.main.async {
-                    self.articles = Array(result.results.prefix(3))
+                    self.articles = Array(result.results.prefix(50))
                 }
             } catch {
                 print("Failed to decode JSON: \(error)")

@@ -12,6 +12,11 @@ struct MainTabView: View {
                 .tabItem {
                     Label("Sports", systemImage: "sportscourt")
                 }
+            
+            GuardianNewsView()
+                .tabItem {
+                    Label("Guardian", systemImage: "newspaper.fill")
+                }
         }
     }
 }
