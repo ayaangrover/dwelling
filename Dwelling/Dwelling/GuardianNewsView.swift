@@ -20,7 +20,7 @@ struct GuardianNewsView: View {
                         Link(destination: URL(string: article.webUrl)!) {
                             Text(article.webTitle)
                                 .font(.headline)
-                                .foregroundColor(   .blue) // Optional: Change the color to indicate it's a link
+                                .foregroundColor(.blue) // Optional: Change the color to indicate it's a link
                         }
                         if let trailText = article.fields?.trailText {
                             Text(trailText)
@@ -40,7 +40,7 @@ struct GuardianNewsView: View {
                         .frame(maxWidth: .infinity, alignment: .center)
                 }
             }
-            .navigationTitle("Top Headlines - Guardian")
+            .navigationTitle("The Guardian")
         }
         .onAppear {
             viewModel.fetchNews()

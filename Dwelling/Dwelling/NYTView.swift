@@ -27,7 +27,7 @@ struct NYTView: View {
                 }
                 .padding()
             }
-            .navigationTitle("Top Headlines - NYT")
+            .navigationTitle("New York Times")
         }
         .onAppear {
             viewModel.fetchNews()

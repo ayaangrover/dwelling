@@ -60,7 +60,7 @@ struct GuardianResponse: Codable {
     let results: [GuardianArticle]
 }
 
-struct GuardianArticle: Identifiable, Codable {
+struct GuardianArticle: Identifiable, Codable, Equatable {
     let id: String
     let webTitle: String
     let fields: GuardianFields?
@@ -68,6 +68,10 @@ struct GuardianArticle: Identifiable, Codable {
     
     var identifier: UUID {
         return UUID()
+    }
+    
+    static func == (lhs: GuardianArticle, rhs: GuardianArticle) -> Bool {
+        return lhs.id == rhs.id
     }
 }
 

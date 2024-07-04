@@ -29,7 +29,7 @@ struct SportsNewsView: View {
                 }
                 .padding()
             }
-            .navigationTitle("Top Headlines - Sports")
+            .navigationTitle("Sports")
         }
         .onAppear {
             viewModel.fetchNews()
