@@ -8,14 +8,19 @@ struct MainTabView: View {
                     Label("NYT", systemImage: "newspaper")
                 }
             
+            GuardianNewsView()
+                .tabItem {
+                    Label("Guardian", systemImage: "newspaper.fill")
+                }
+            
             SportsNewsView()
                 .tabItem {
                     Label("Sports", systemImage: "sportscourt")
                 }
-            
-            GuardianNewsView()
+
+            WebPageView()
                 .tabItem {
-                    Label("Guardian", systemImage: "newspaper.fill")
+                    Label("Schedule", systemImage: "calendar")
                 }
         }
     }
