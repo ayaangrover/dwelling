@@ -1,0 +1,1 @@
+Dwelling is a news aggregator. It was my first swift/swiftui app, so some hours I have very few commits and others I have a hundred lines written. It has 4 tabs - nyt, guardian, sports, and my school schedule. The name dwelling comes from the fact that it is like a homepage with all the important things I check every day.
